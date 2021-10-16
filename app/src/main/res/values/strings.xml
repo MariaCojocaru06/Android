@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pinterest</string>
+    <string name="logare">Logare</string>
+    <string name="login">Login</string>
+    <string name="adresa_de_e_mail">Adresa de e-mail</string>
+    <string name="parola">Parola</string>
+</resources>
