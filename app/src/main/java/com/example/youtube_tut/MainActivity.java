@@ -7,17 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 private Button btn;
+
 private TextView txt;
 private final int MainActivityRequestCode=100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +36,17 @@ private final int MainActivityRequestCode=100;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(txt.getText().toString().isEmpty()){
                 Toast.makeText(MainActivity.this,"apasat pe buton",Toast.LENGTH_LONG).show();
 //                Intent intent=new Intent(getApplicationContext(),MainActivity2.class);
 //
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivityForResult(intent,MainActivityRequestCode);
-            }
-
-
-
+            }else{
+                Toast.makeText(MainActivity.this,"Pagina Principala",Toast.LENGTH_LONG).show();
+               Intent intent=new Intent(getApplicationContext(),PaginaPrincipala.class);
+               startActivity(intent);
+            }}
 
         });
 //        Intent myIntent = new Intent(MainActivity.this, MainActivity2.class);
@@ -44,6 +54,8 @@ private final int MainActivityRequestCode=100;
 //        MainActivity.this.startActivity(myIntent);
 //
         Log.v("lifestyle","onCreate()");
+
+
 
     }
 
@@ -61,4 +73,6 @@ private final int MainActivityRequestCode=100;
             }
         }
     }
+
+
 }
