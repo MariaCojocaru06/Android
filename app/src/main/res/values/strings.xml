@@ -4,4 +4,6 @@
     <string name="login">Login</string>
     <string name="adresa_de_e_mail">Adresa de e-mail</string>
     <string name="parola">Parola</string>
+    <string name="Nume">nume</string>
+    <string name="prenume">Prenume</string>
 </resources>

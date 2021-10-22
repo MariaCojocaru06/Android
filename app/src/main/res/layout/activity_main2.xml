@@ -7,6 +7,7 @@
     tools:context=".MainActivity2"
     android:background="@drawable/background">
 
+
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
@@ -15,38 +16,99 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="108dp"
         android:ems="10"
+        android:hint="@string/parola"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/button"
-        android:hint="@string/parola"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="108dp"
         android:ems="10"
+        android:hint="@string/adresa_de_e_mail"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        android:hint="@string/adresa_de_e_mail"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  android:layout_width="0dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+         />
+
+    <EditText
+        android:id="@+id/nume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="108dp"
+        android:ems="10"
+        android:hint="Nume"
+
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Prenume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="30dp"
+
+        android:ems="10"
+        android:hint="@string/prenume"
+
+
+        android:minHeight="48dp"
+
+        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nume"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="162dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+        tools:layout_editor_absoluteY="470dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Data nasterii"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/Prenume" />
 </androidx.constraintlayout.widget.ConstraintLayout>

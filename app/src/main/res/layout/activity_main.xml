@@ -15,69 +15,47 @@
         android:text="Bine ati venit pe Pinterest"
         android:textColor="@color/black"
         android:textSize="30sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
       />
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-400dp"
+        android:layout_marginTop="-430dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sus" />
 
     <ImageView
-    android:id="@+id/imageView3"
-    android:layout_width="158dp"
-    android:layout_height="131dp"
-    app:srcCompat="@drawable/pinterest"
-    tools:layout_editor_absoluteX="221dp"
-    tools:layout_editor_absoluteY="381dp"
-    android:layout_marginTop="-40dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/textView"
-       />
+        android:id="@+id/imageView3"
+        android:layout_width="158dp"
+        android:layout_height="131dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pinterest" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+    <Button
+        android:id="@+id/bt1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="72dp"
         android:layout_marginRight="60dp"
         android:background="@color/red"
         android:backgroundTint="#D63636"
         android:backgroundTintMode="src_in"
-        android:clickable="true"
-        android:contentDescription="@string/login"
-        android:enabled="true"
-
-        android:longClickable="true"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@android:drawable/button_onoff_indicator_off"
-        />
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-
-        android:layout_marginTop="44dp"
-        android:layout_marginRight="60dp"
-        android:text="Login"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:shadowRadius="@integer/material_motion_duration_long_2"
+        android:text="LOGIN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -98,27 +76,8 @@
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
+        app:layout_constraintTop_toBottomOf="@+id/bt1"
         app:srcCompat="@android:drawable/button_onoff_indicator_off" />
-
-<!--    <Button-->
-<!--        android:id="@+id/bb"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="60dp"-->
-<!--        android:layout_marginTop="36dp"-->
-<!--        android:layout_marginRight="60dp"-->
-<!--        android:background="@color/red"-->
-<!--        android:backgroundTint="#D63636"-->
-<!--        android:backgroundTintMode="src_in"-->
-<!--        android:clickable="true"-->
-<!--        android:contentDescription="@string/login"-->
-<!--        android:enabled="false"-->
-
-<!--        android:text="Login"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
 
     <TextView
         android:id="@+id/textView3"
@@ -126,23 +85,23 @@
         android:layout_height="wrap_content"
 
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="52dp"
         android:layout_marginRight="60dp"
         android:text="Continua cu Facebook"
         android:textSize="20dp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+        app:layout_constraintTop_toBottomOf="@+id/bt1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="60dp"
         android:background="@color/royalblue"
         android:backgroundTint="#B7BDC5"
@@ -152,6 +111,7 @@
         android:enabled="false"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton1"
         app:srcCompat="@android:drawable/button_onoff_indicator_off" />
@@ -162,14 +122,14 @@
         android:layout_height="wrap_content"
 
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="60dp"
         android:text="Continua cu Google"
         android:textSize="20dp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton1" />
 
@@ -192,5 +152,22 @@
         app:layout_constraintBottom_toBottomOf="@id/floatingActionButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/google" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="60dp"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="421dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:hint="Adresa de e-mail"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
