@@ -49,6 +49,7 @@ public class Domeniu {
         this.imgUrl=img;
     }
 
+
     public Domeniu() {
     }
 

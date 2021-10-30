@@ -1,11 +1,17 @@
 package com.example.youtube_tut;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +22,9 @@ public class PaginaPrincipala extends AppCompatActivity {
     private ListView lv2;
     private DomeniuAdapter adapter;
     private  DomeniuAdapter adapter2;
+    private Adaptor2 ad;
+    private Adaptor2 ad1;
+    private JSONRead jsonRead;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,5 +85,103 @@ public class PaginaPrincipala extends AppCompatActivity {
         lista.add(d6);
         lista.add(d7);
         return  lista;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.exemplu,menu);
+        return  true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//
+//      switch (item.getItemId()){
+//          case R.id.item1:
+//              Toast.makeText(this,"Vizualizare lista",Toast.LENGTH_LONG).show();
+//              return true;
+//          case R.id.item2:
+//              Toast.makeText(this,"Vizualizare JSON",Toast.LENGTH_LONG).show();
+//              return true;
+
+        //    }
+        if(item.getItemId()==R.id.item1){
+            Toast.makeText(this,"Vizualizare lista",Toast.LENGTH_LONG).show();
+//
+            lv1=findViewById(R.id.listView1);
+            lv2=findViewById(R.id.listView2);
+
+            adapter=new DomeniuAdapter(getList());
+            lv1.setAdapter(adapter);
+            adapter.updateList(getList());
+
+            adapter2=new DomeniuAdapter(getList2());
+            lv2.setAdapter(adapter2);
+            adapter2.updateList(getList2());
+
+        }
+        if(item.getItemId()==R.id.item2) {
+            Toast.makeText(this,"Vizualizare JSON",Toast.LENGTH_LONG).show();
+            lv1=findViewById(R.id.listView1);
+            ad=new Adaptor2(lista());
+            lv1.setAdapter(ad);
+            //Golire list2
+            lv2=findViewById(R.id.listView2);
+            ad1=new Adaptor2(new ArrayList<>());
+            lv2.setAdapter(ad1);
+
+
+//            adapter = new DomeniuAdapter(lista());
+//
+//            lv1.setAdapter(adapter);
+
+
+            jsonRead= new JSONRead();
+
+            Thread thread=new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    jsonRead.read(" https://jsonkeeper.com/b/JDMQ", new IResponse() {
+                        @Override
+                        public void onSuccess(List<Domeniu> list) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ad.updateList(list);
+
+                                }
+                            });
+
+                        }
+
+                        @Override
+                        public void onError(String errorMessage) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(PaginaPrincipala.this,errorMessage,Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+                        }
+                    });
+
+                }
+            });
+            thread.start();
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    private List<Domeniu> lista(){
+        ArrayList lista= new ArrayList<Domeniu>();
+//        Domeniu d1=new Domeniu("Hairstyle",3900);
+//        lista.add(d1);
+
+
+        return lista;
     }
 }
