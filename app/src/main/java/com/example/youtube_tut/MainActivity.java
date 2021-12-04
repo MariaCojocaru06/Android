@@ -25,6 +25,7 @@ private Button btn;
 
 private TextView txt;
 private final int MainActivityRequestCode=100;
+private UtilizatorDao utilizatorDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +56,25 @@ private final int MainActivityRequestCode=100;
 //
         Log.v("lifestyle","onCreate()");
 
+utilizatorDAO=dataAcces.getInstance(this).getDatabase().utilizatorDao();
+Utilizator u1=new Utilizator("Maria","Pop","12.09.2021","pop@gmail.com","oopo");
+Utilizator u2=new Utilizator("Ana","Lorena","12.02.2021","anaLorena@gmail.com","lll");
 
+new Thread(new Runnable() {
+    @Override
+    public void run() {
+        utilizatorDAO.insert(u1);
+        utilizatorDAO.insert(u2);
+        utilizatorDAO.delete(u1);
 
+        List<Utilizator> lista2=utilizatorDAO.select();
+        List<Utilizator>lista3=utilizatorDAO.getAll("Maria");
+        Log.v("operatii",lista2.toString());
+        Log.v("operatii",lista3.toString());
     }
+}).start();
+
+   }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

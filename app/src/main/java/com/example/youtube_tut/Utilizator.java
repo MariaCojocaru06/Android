@@ -3,11 +3,33 @@ package com.example.youtube_tut;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+
+@Entity(tableName = "utilizator")
 public class Utilizator implements Parcelable {
+@PrimaryKey(autoGenerate = true)
+private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @ColumnInfo(name = "nume")
     private String nume;
+    @ColumnInfo(name = "prenume")
     private String prenume;
+    @ColumnInfo(name = "data")
     private String data;
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "parola")
     private String parola;
 
     public Utilizator(String nume, String prenume, String data, String email, String parola) {
